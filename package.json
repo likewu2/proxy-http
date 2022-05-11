@@ -1,0 +1,17 @@
+{
+  "name": "proxy-repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Firecreper2/proxy-repo.git",
+  "author": "Firecreper2 <dylannguyen0529@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "morgan": "^1.10.0",
+    "requires-port": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
