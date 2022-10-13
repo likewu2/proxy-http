@@ -1,7 +1,7 @@
 {
   "name": "proxy-repo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index2.js",
   "repository": "https://github.com/Firecreper2/proxy-repo.git",
   "author": "Firecreper2 <dylannguyen0529@gmail.com>",
   "license": "MIT",
