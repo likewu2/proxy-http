@@ -1,21 +1,18 @@
-const express = require('express');
+const http = require('http');
+const setup = require('proxy');
 const morgan = require("morgan");
-const { createProxyMiddleware } = require('http-proxy-middleware');
-// Create Express Server
-const app = express();
 
-const API_SERVICE_URL = "https://astra.datastax.com/";
+var server = setup(http.createServer());
+server.listen(3128, function () {
+  var port = server.address().port;
+  console.log('HTTP(s) proxy server listening on port %d', port);
+});
 
-app.use(morgan('dev'));
 
-app.use('/', createProxyMiddleware({
-    target: API_SERVICE_URL,
-    changeOrigin: true,
-    pathRewrite: {
-        [`^/`]: '',
-    },
-}));
-
-app.listen(8080, () => {
-    console.log(`Starting Proxy`);
- });
+/*
+$ proxy --authenticate 'if \
+    [ "$PROXY_AUTH_USERNAME" = "foo" ] && \
+    [ "$PROXY_AUTH_PASSWORD" = "bar" ]; \
+      then exit 0; \
+    fi; \
+    exit 1;'*/
