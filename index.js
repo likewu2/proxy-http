@@ -4,7 +4,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 // Create Express Server
 const app = express();
 
-const API_SERVICE_URL = "https://";
+const API_SERVICE_URL = "https://astra.datastax.com/";
 
 app.use(morgan('dev'));
 
